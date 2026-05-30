@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // 拉取代码，通常会自动进行，这里也可以显式声明
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo '代码已更新！构建任务正在进行中...'
+                // 将 'echo' 命令替换为你自己的构建命令，例如 'mvn clean package'
+            }
+        }
+    }
+}
